@@ -21,6 +21,7 @@ pipeline{
         failure{
             echo'pipeline failed'
             echo'something went wrong'
+            echo'check your code'
         }
     }
 }
