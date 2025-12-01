@@ -16,7 +16,15 @@ class LinkedList:
 
     # Insert at end
 
-
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
     # Display list
     def display(self):
         temp = self.head
@@ -35,7 +43,9 @@ if __name__ == "__main__":
     ll.insert_at_beginning(30)
     ll.insert_at_beginning(20)
     ll.insert_at_beginning(10)
-
+    ll.insert_at_end(40)
+    ll.insert_at_end(50)
+    ll.insert_at_end(60)
     
     # Display final list
     ll.display()
