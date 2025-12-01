@@ -1,0 +1,24 @@
+pipeline{
+    agent any 
+    stages{
+        stage('checkout'){
+            steps{
+                echo'checking scm'
+                git branch :'vinnu' , url :'https://github.com/vinodkumarthati/practical1.git'
+            }
+        }
+        stage('run python'){
+            steps{
+                echo'running'
+                sh'python3 demo.py'
+            }
+        }
+    }
+    post{
+        success{
+            echo'pipeline completed'
+        }
+        failure{
+            echo'pipeline failed'
+        }
+    }
